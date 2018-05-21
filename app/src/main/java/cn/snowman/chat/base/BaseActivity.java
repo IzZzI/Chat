@@ -1,28 +1,30 @@
 package cn.snowman.chat.base;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
+
+import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by zhouzy on 2017/3/8.
  */
 
-public class BaseActivity extends FragmentActivity
-{
+public class BaseActivity extends AutoLayoutActivity {
 
-	@Override
-	public void setContentView(int layoutResID)
-	{
-		super.setContentView(layoutResID);
-		ButterKnife.bind(this);
-	}
+    private Unbinder unbinder;
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		super.onActivityResult(requestCode, resultCode, data);
-	}
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        unbinder = ButterKnife.bind(this);
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+
+    }
 }
