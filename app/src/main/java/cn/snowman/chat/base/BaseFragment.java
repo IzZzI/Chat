@@ -22,6 +22,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         parentView = inflater.inflate(setLayoutResId(), container, false);
         unBinder = ButterKnife.bind(this, parentView);
+        init();
         return parentView;
     }
 
@@ -31,6 +32,11 @@ public abstract class BaseFragment extends Fragment {
      * @return
      */
     public abstract int setLayoutResId();
+
+    /**
+     * 初始化操作
+     */
+    public abstract void init();
 
     @Override
     public void onDestroy() {

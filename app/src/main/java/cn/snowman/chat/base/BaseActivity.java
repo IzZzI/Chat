@@ -1,7 +1,5 @@
 package cn.snowman.chat.base;
 
-import android.content.Intent;
-
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.ButterKnife;
@@ -25,6 +23,5 @@ public class BaseActivity extends AutoLayoutActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
-
     }
 }

@@ -11,6 +11,11 @@ import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
+import cn.snowman.chat.R;
+import cn.snowman.chat.entity.CommentItem;
+import cn.snowman.chat.entity.ContentItem;
+import cn.snowman.chat.entity.ReplyItem;
+
 /**
  * @author
  * @date on 2018-5-21 12:03
@@ -22,6 +27,8 @@ public class SecretRecyclerAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
     public static final int TYPE_CONTENT = 0;
     //回复
     public static final int TYPE_REPLY = 1;
+    //评论
+    public static final int TYPE_COMMENT = 2;
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
@@ -31,6 +38,9 @@ public class SecretRecyclerAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
      */
     public SecretRecyclerAdapter(List data) {
         super(data);
+        addItemType(TYPE_CONTENT, R.layout.item_secret_content);
+        addItemType(TYPE_REPLY, R.layout.item_secret_reply);
+        addItemType(TYPE_COMMENT, R.layout.item_secret_comment);
     }
 
     @Override
@@ -41,7 +51,22 @@ public class SecretRecyclerAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
 
     @Override
     protected void convert(BaseViewHolder helper, MultiItemEntity item) {
-
+        switch (helper.getItemViewType()) {
+            case TYPE_CONTENT:
+                ContentItem content = (ContentItem) item;
+                helper.setText(R.id.tv_item_secret_content_text, content.getText());
+                break;
+            case TYPE_REPLY:
+                ReplyItem reply = (ReplyItem) item;
+                helper.setText(R.id.tv_item_secret_reply_text, reply.getText());
+                break;
+            case TYPE_COMMENT:
+                CommentItem comment = (CommentItem) item;
+                helper.setText(R.id.tv_item_secret_comment_text, comment.getText());
+                break;
+            default:
+                break;
+        }
     }
 
 }
