@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Chat</string>
+    <string name="title">title</string>
+    <string name="login">登录</string>
+    <string name="username">用户名:</string>
+    <string name="email">邮箱地址:</string>
+    <string name="password">密码:</string>
+    <string name="login_password">登录密码:</string>
+    <string name="sure_password">确认密码:</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="hint_password_sure">再次输入密码</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_email">请输入邮箱地址</string>
+    <string name="hint_xuantian">选填</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="register">注册</string>
+    <string name="login_success">登录成功</string>
+    <string name="logining">登录中</string>
+    <string name="third_party">三方登录</string>
+    <string name="login_failed">登录失败</string>
 </resources>

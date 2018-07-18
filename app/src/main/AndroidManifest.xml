@@ -23,19 +23,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+
+        <activity android:name=".module.login.activity.LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".module.login.activity.RegisterActivity"></activity>
 
         <meta-data
             android:name="design_width"
-            android:value="1080"></meta-data>
+            android:value="720"></meta-data>
         <meta-data
             android:name="design_height"
-            android:value="1920"></meta-data>
+            android:value="1080"></meta-data>
     </application>
 
 </manifest>

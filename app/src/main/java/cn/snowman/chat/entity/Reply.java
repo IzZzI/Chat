@@ -1,6 +1,5 @@
 package cn.snowman.chat.entity;
 
-import cn.bmob.v3.BmobObject;
 
 /**
  * @author
@@ -8,6 +7,6 @@ import cn.bmob.v3.BmobObject;
  * @describe TODO
  */
 
-public class Reply extends BmobObject {
-    
+public class Reply {
+
 }

@@ -2,9 +2,6 @@ package cn.snowman.chat.base;
 
 import android.app.Application;
 
-import butterknife.ButterKnife;
-import cn.bmob.v3.Bmob;
-import cn.snowman.chat.common.constant.Constant;
 
 /**
  * @author
@@ -17,6 +14,5 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Bmob.initialize(this, Constant.BMOB_APPLICATION_ID);
     }
 }

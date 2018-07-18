@@ -1,6 +1,6 @@
 package cn.snowman.chat.entity;
 
-import cn.bmob.v3.BmobObject;
+import java.io.Serializable;
 
 /**
  * @author
@@ -8,7 +8,7 @@ import cn.bmob.v3.BmobObject;
  * @describe TODO
  */
 
-public class Comment extends BmobObject {
+public class Comment implements Serializable {
     private String nickName;
     private String content;
 
